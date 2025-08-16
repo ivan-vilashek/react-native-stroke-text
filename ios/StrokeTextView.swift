@@ -21,6 +21,11 @@ class StrokeTextView: RCTView {
         ])
     }
 
+
+    override var intrinsicContentSize: CGSize {
+        return label.intrinsicContentSize
+    }
+
     override func layoutSubviews() {
         super.layoutSubviews()
         self.bridge?.uiManager.setSize(label.intrinsicContentSize, for: self)
